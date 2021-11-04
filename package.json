@@ -1,13 +1,24 @@
 {
   "devDependencies": {
-    "@ui5/cli": "^2.14.0"
+    "@ui5/cli": "^2.11.1",
+    "@ui5/fs": "^2.0.6",
+    "@ui5/logger": "^2.0.1",
+    "@sap/ux-ui5-tooling": "1",
+    "rimraf": "3.0.2"
   },
-  "name": "ui5_walkthrough",
+  "name": "ui5walkthrough",
   "description": "",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
+  "main": "webapp/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "fiori run --open test/flpSandbox.html#app-tile",
+    "start-local": "fiori run --config ./ui5-local.yaml --open test/flpSandboxMockServer.html#app-tile",
+    "start-noflp": "fiori run --open 'index.html'",
+    "build": "ui5 build -a --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
+    "deploy": "fiori verify",
+    "deploy-config": "fiori add deploy-config",
+    "start-mock": "fiori run --open 'test/flpSandboxMockServer.html#app-tile'"
   },
   "repository": {
     "type": "git",
@@ -19,5 +30,16 @@
     "url": "https://github.com/DanielCastanedaMejia/ui5_walkthrough/issues"
   },
   "homepage": "https://github.com/DanielCastanedaMejia/ui5_walkthrough#readme",
-  "keywords": []
+  "keywords": [
+    "ui5",
+    "openui5",
+    "sapui5"
+  ],
+  "private": true,
+  "sapuxLayer": "CUSTOMER_BASE",
+  "ui5": {
+    "dependencies": [
+      "@sap/ux-ui5-tooling"
+    ]
+  }
 }
