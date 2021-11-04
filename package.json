@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@ui5/cli": "^2.14.0"
+  },
+  "name": "ui5_walkthrough",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielCastanedaMejia/ui5_walkthrough.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielCastanedaMejia/ui5_walkthrough/issues"
+  },
+  "homepage": "https://github.com/DanielCastanedaMejia/ui5_walkthrough#readme",
+  "keywords": []
+}
