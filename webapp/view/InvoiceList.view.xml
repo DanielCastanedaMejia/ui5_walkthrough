@@ -1,7 +1,8 @@
 <mvc:View
-    controller="sap.ui.demo.walkthrough.controller.InvoiceList"
+    controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc" >
+    <Button text="Test" press=".onCheck"></Button>
     <List
         headerText="{i18n>invoiceListTitle}"
         class="sapUIResponsiveMargin"
@@ -11,14 +12,21 @@
             <ObjectListItem 
                 title="{invoice>Quantity} x {invoice>ProductName}"
                 number="{
-                    parts: [{path: 'invoice>ExtendedPrice'}],
+                    parts: [{path: 'invoice>ExtendedPrice'}, {path: 'view>/currency'}],
                     type: 'sap.ui.model.type.Currency',
                     formatOptions: {
                         showMeasure: false
                     }
                 }"
-                numberUnit="EUR"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}" />
+                numberUnit="{view>/currency}"
+                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success'}" >
+                <firstStatus>
+                    <ObjectStatus text="{
+                        path: 'invoice>Status',
+                        formatter: '.formatter.statusText'
+                    }" />
+                </firstStatus>
+            </ObjectListItem>
         </items>
     </List>
 </mvc:View>
