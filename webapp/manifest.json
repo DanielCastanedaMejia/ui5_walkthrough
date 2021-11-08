@@ -49,10 +49,6 @@
           "fallbackLocale": ""
         }
       },
-      "localInvoice": {
-        "type": "sap.ui.model.json.JSONModel",
-        "uri": "Invoices.json"
-      },
       "invoice": {
         "dataSource": "invoiceRemote"
       }
